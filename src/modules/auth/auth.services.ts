@@ -80,6 +80,7 @@ const getLoggedInUser = async (bearerToken: string) => {
   const userData = await prisma.user.findUnique({
     where: { email },
     select: {
+      id: true,
       password: false,
       firstName: true,
       lastName: true,

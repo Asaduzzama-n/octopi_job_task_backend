@@ -30,8 +30,8 @@ const getProducts = async (options: any) => {
         AND: [
           {
             price: {
-              gte: minPrice || 0,
-              lte: maxPrice || Number.MAX_SAFE_INTEGER,
+              gte: Number(minPrice) || 0,
+              lte: Number(maxPrice) || 10000000,
             },
           },
           searchTerm
